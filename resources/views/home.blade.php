@@ -3,6 +3,9 @@
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
+        <h2>Customers</h2>
+    </div>
+    <div class="row justify-content-center">
         <div class="col-md-8">
             <table class="table">
                 <thead>
@@ -14,7 +17,7 @@
                 </tr>
                 </thead>
                 <tbody>
-                    @forelse ($customers as $key => $customer)
+                    @forelse ($customers as $customer)
                         <tr>
                             <th scope="row">{{$customer['id']}}</th>
                             <td>{{$customer['first_name']}}</td>

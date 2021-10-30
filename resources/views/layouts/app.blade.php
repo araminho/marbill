@@ -33,7 +33,8 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
-
+                        <li><a class="dropdown-item" href="{{ route('home') }}">Customers</a></li>
+                        <li><a class="dropdown-item" href="{{ route('groups') }}">Customer Groups</a></li>
                     </ul>
 
                     <!-- Right Side Of Navbar -->
