@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\CustomerGroupController;
 use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\TemplateController;
+use App\Http\Controllers\CampaignController;
 
 /*
 |--------------------------------------------------------------------------
@@ -44,5 +45,11 @@ Route::prefix('templates')->group(function () {
     Route::get('/', [TemplateController::class, 'index'])->name('templates');
     Route::get('/create', [TemplateController::class, 'create']);
     Route::post('/', [TemplateController::class, 'store']);
+});
+
+Route::prefix('campaigns')->group(function () {
+    Route::get('/', [CampaignController::class, 'index'])->name('campaigns');
+    Route::get('/create', [CampaignController::class, 'create']);
+    Route::post('/', [CampaignController::class, 'store']);
 });
 

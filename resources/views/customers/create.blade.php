@@ -43,9 +43,7 @@
                     </div>
                     <div class="form-group">
                         <label for="birth_date">Birth date</label>
-                        <div id="date-picker-example" class="md-form md-outline input-with-post-icon datepicker">
-                            <input placeholder="Select date" id="birth_date" name="birth_date" class="form-control">
-                        </div>
+                        <input placeholder="Select date" id="birth_date" name="birth_date" class="form-control">
                     </div>
 
                     <div class="form-group">

@@ -40,6 +40,7 @@
                         <li><a class="dropdown-item" href="{{ route('home') }}">Customers</a></li>
                         <li><a class="dropdown-item" href="{{ route('groups') }}">Customer Groups</a></li>
                         <li><a class="dropdown-item" href="{{ route('templates') }}">Templates</a></li>
+                        <li><a class="dropdown-item" href="{{ route('campaigns') }}">Campaigns</a></li>
                     </ul>
 
                     <!-- Right Side Of Navbar -->
