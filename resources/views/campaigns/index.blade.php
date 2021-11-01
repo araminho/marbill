@@ -32,7 +32,10 @@
                             <td>{{$campaign->template->title}}</td>
                             <td>{{$campaign->send_date}}</td>
                             <td>
-                                <a class="btn btn-success" href="{{ url("/campaigns/send{$campaign['id']}") }}">Send now</a>
+                                <a class="btn btn-success" target="_blank"
+                                   href="{{ url("/campaigns/send/{$campaign['id']}") }}">
+                                    Send now
+                                </a>
                             </td>
                         </tr>
                     @empty

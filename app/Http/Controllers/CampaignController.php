@@ -38,4 +38,35 @@ class CampaignController extends Controller
         $campaign->save();
         return Redirect::to('campaigns');
     }
+
+    public function send($id)
+    {
+        $campaign = Campaign::find($id);
+        if (!$campaign){
+            echo "Campaign not found!";
+        }
+        $subject = $campaign->template->subject;
+        $body = $campaign->template->body;
+        $group = $campaign->group;
+        $customers = $group->customers;
+        $counter = 0;
+        foreach ($customers as $customer) {
+            try {
+                $body = str_replace('{first_name}', $customer['first_name'], $body);
+                $body = str_replace('{last_name}', $customer['last_name'], $body);
+                $this->sendEmail($subject, $body, $customer['email']);
+                $counter++;
+            }
+            catch (\Exception $e) {
+                echo $e->getMessage();
+            }
+        }
+
+        echo "Sent $counter emails!";
+    }
+
+    function sendEmail(string $subject, string $body, string $email)
+    {
+        mail($email, $subject, $body);
+    }
 }
