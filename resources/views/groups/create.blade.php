@@ -14,7 +14,7 @@
                 <form method="post" action="{{ url('/customer-groups') }}">
                     @csrf
                     <div class="form-group">
-                        <label for="groupTitle">Title</label>
+                        <label for="groupTitle">Title *</label>
                         <input type="text" class="form-control" id="groupTitle"
                                name="title" placeholder="Enter title" required>
                     </div>

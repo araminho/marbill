@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\CustomerGroupController;
+use App\Http\Controllers\CustomerController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,7 +22,13 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/home', [CustomerController::class, 'index'])->name('home');
+Route::get('/', [CustomerController::class, 'index']);
+
+Route::prefix('customers')->group(function () {
+    Route::get('/create', [CustomerController::class, 'create']);
+    Route::post('/', [CustomerController::class, 'store']);
+});
 
 Route::prefix('customer-groups')->group(function () {
     Route::get('/', [CustomerGroupController::class, 'index'])->name('groups');

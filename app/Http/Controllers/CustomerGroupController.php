@@ -8,6 +8,11 @@ use Illuminate\Support\Facades\Redirect;
 
 class CustomerGroupController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     public function index()
     {
         $customersGroups = CustomerGroup::all();
