@@ -3,6 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
+use Illuminate\Support\Facades\DB;
 
 class CreateCustomersToCustomerGroupsTable extends Migration
 {
@@ -17,7 +18,9 @@ class CreateCustomersToCustomerGroupsTable extends Migration
             $table->id();
             $table->integer('customer_id');
             $table->integer('customer_group_id');
-            $table->timestamps();
+            $table->timestamp('created_at')->useCurrent();
+            $table->timestamp('updated_at')
+               ->default( DB::raw('CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP'));
         });
     }
 

@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\CustomerGroupController;
 use App\Http\Controllers\CustomerController;
+use App\Http\Controllers\TemplateController;
 
 /*
 |--------------------------------------------------------------------------
@@ -37,5 +38,11 @@ Route::prefix('customer-groups')->group(function () {
     Route::get('/{id}', [CustomerGroupController::class, 'edit']);
     Route::post('/{id}', [CustomerGroupController::class, 'update']);
     Route::get('/{id}/delete', [CustomerGroupController::class, 'delete']);
+});
+
+Route::prefix('templates')->group(function () {
+    Route::get('/', [TemplateController::class, 'index'])->name('templates');
+    Route::get('/create', [TemplateController::class, 'create']);
+    Route::post('/', [TemplateController::class, 'store']);
 });
 

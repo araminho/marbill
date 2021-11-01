@@ -12,6 +12,7 @@
     <!-- Scripts -->
     <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
     <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
     <script src="{{ asset('js/script.js') }}" defer></script>
 
     <!-- Fonts -->
@@ -38,6 +39,7 @@
                     <ul class="navbar-nav mr-auto">
                         <li><a class="dropdown-item" href="{{ route('home') }}">Customers</a></li>
                         <li><a class="dropdown-item" href="{{ route('groups') }}">Customer Groups</a></li>
+                        <li><a class="dropdown-item" href="{{ route('templates') }}">Templates</a></li>
                     </ul>
 
                     <!-- Right Side Of Navbar -->
